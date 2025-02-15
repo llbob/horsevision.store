@@ -7,8 +7,10 @@ import { PostBody } from "@/app/_components/post-body";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Header from "@/app/_components/header";
 import { ArrowRight } from "lucide-react";
+import { Suspense } from "react";
+import Loading from "./loading";
 
-export default async function Index() {
+async function PageContent() {
   // Get the data first
   const page = getIndexPage();
 
@@ -18,10 +20,6 @@ export default async function Index() {
 
   // Convert content after getting page data
   const content = await markdownToHtml(page.content || "");
-
-  // Add artificial delay AFTER getting the data
-  // This ensures the loading state is shown even if data fetching is fast
-  await new Promise(resolve => setTimeout(resolve, 2000));
 
   return (
     <main>
@@ -99,6 +97,17 @@ export default async function Index() {
         </article>
       </Container>
     </main>
+  );
+}
+
+export default async function Index() {
+  // Force the loading state to show first
+  await new Promise(resolve => setTimeout(resolve, 2000));
+
+  return (
+    <Suspense fallback={<Loading />}>
+      <PageContent />
+    </Suspense>
   );
 }
 
