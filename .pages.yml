@@ -63,5 +63,6 @@ content:
       - { name: buyButtonText, label: Buy button text, type: string }
       - { name: buyButtonLink, label: Buy button link, type: string }
       - { name: price, label: Price, type: string }
-      - { name: copyright, label: Copyright, type: text, description: "for the copyright field in the bottom" }
+      - { name: copyrightBody, label: Copyright body, type: text, description: "for the copyright field in the bottom" }
+      - { name: copyrightEndText, label: Copyright end text, type: text, description: "for the final line of the copyright" }
       - { name: body, label: Content, type: rich-text }
