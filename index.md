@@ -1,6 +1,6 @@
 ---
 title: Horse Vision – Another Life
-releaseCode: INEX012
+releaseCode: "[INEX012]"
 duration: 00:32:15
 coverImage: /assets/album/Screenshot 2025-02-15 at 11.10.18.png
 infoBlock1: Contains 13 tracks - including all singles released throughout
