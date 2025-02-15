@@ -40,3 +40,10 @@ content:
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: body, label: Content, type: rich-text }
+  - name: archive
+    label: Archive
+    type: file
+    path: archive.md   
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: body, label: Content, type: rich-text }
