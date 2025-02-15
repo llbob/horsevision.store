@@ -13,8 +13,3 @@ export type Post = {
   content: string;
   preview?: boolean;
 };
-
-export type Page = {
-  title: string;
-  content: string;
-};

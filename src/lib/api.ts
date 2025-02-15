@@ -1,10 +1,12 @@
 import { Post } from "@/interfaces/post";
+import { Page } from "@/interfaces/page";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
 const postsDirectory = join(process.cwd(), "_posts");
-const pagesDirectory = join(process.cwd(), "_pages");
+const contactPath = join(process.cwd(), "contact.md");
+const infoPath = join(process.cwd(), "info.md");
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
@@ -28,13 +30,20 @@ export function getAllPosts(): Post[] {
   return posts;
 }
 
-export function getPage(path: string) {
-  const fullPath = join(pagesDirectory, `${path}.md`);
+export function getPage(slug: string): Page | null {
+  const fullPath = join(process.cwd(), `${slug}.md`);
+  
   try {
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data, content } = matter(fileContents);
-    return { ...data, content };
+    
+    return {
+      slug,
+      title: data.title,
+      content,
+    } as Page;
   } catch (error) {
+    console.error(`Error reading page ${slug}:`, error);
     return null;
   }
 }

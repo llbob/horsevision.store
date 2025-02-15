@@ -5,9 +5,10 @@ import Container from "../_components/container";
 import Header from "../_components/header";
 import { PostBody } from "../_components/post-body";
 import markdownToHtml from "../../lib/markdownToHtml";
+import { Page } from "@/interfaces/page";
 
-export default async function Contact() {
-  const page = getPage("contact");
+export default async function Info() {
+  const page: Page | null = getPage("info");
 
   if (!page) {
     return notFound();
@@ -29,13 +30,13 @@ export default async function Contact() {
 }
 
 export function generateMetadata(): Metadata {
-  const page = getPage("contact");
+  const page = getPage("info");
 
   if (!page) {
     return notFound();
   }
 
-  const title = `${page.title} | Contact`;
+  const title = `${page.title} | Info`;
 
   return {
     title,
