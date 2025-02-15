@@ -1,5 +1,5 @@
 import Footer from "@/app/_components/footer";
-import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
+import { CMS_NAME } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -7,12 +7,24 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+function getNormalizedUrl() {
+  const url = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  try {
+    const urlObject = new URL(url);
+    urlObject.hostname = urlObject.hostname.replace(/^www\./, '');
+    return urlObject.toString();
+  } catch {
+    return "http://localhost:3000";
+  }
+}
+
 export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
-  description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
-  openGraph: {
-    images: [HOME_OG_IMAGE_URL],
+  metadataBase: new URL(getNormalizedUrl()),
+  title: {
+    template: `%s | ${CMS_NAME}`,
+    default: CMS_NAME,
   },
+  description: `A statically generated site using Next.js and ${CMS_NAME}.`,
 };
 
 export default function RootLayout({
