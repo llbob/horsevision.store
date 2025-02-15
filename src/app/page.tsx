@@ -20,7 +20,7 @@ export default async function Index() {
   return (
     <main>
       <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background transition-opacity duration-500 animate-fadeIn"
-        style={{ animation: 'fadeOut 1.5s forwards' }}>
+        style={{ animation: 'fadeOut 2.5s forwards' }}>
         {page.pageLoadImage && (
           <div className="mb-8 flex justify-center relative">
             <div className="relative">
@@ -32,7 +32,7 @@ export default async function Index() {
                 className="w-auto h-auto"
               />
               <div className="absolute inset-0 bg-background blur-md opacity-50"
-                style={{ animation: 'revealFromLeft 1s forwards' }} />
+                style={{ animation: 'revealFromLeft 2s forwards' }} />
             </div>
           </div>
         )}
