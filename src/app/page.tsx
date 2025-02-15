@@ -7,7 +7,7 @@ import { PostBody } from "@/app/_components/post-body";
 import markdownToHtml from "@/lib/markdownToHtml";
 
 export default async function Index() {
-  const page = getPage("home");
+  const page = getPage("index");
 
   if (!page) {
     return notFound();
@@ -29,13 +29,13 @@ export default async function Index() {
 }
 
 export function generateMetadata(): Metadata {
-  const page = getPage("contact");
+  const page = getPage("index");
 
   if (!page) {
     return notFound();
   }
 
-  const title = `${page.title} | Contact`;
+  const title = `${page.title} | Index`;
 
   return {
     title,
