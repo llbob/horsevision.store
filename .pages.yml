@@ -61,6 +61,7 @@ content:
       - { name: infoBlock2, label: "Info Block 2", type: string, description: "eg. information about the available formats and delivery method of the album" }
       - { name: infoBlock3, label: "Info Block 3", type: text, description: "eg. explanation of how purchases directly support future releases etc.." }
       - { name: buyButtonText, label: Buy button text, type: string }
+      - { name: buyButtonLink, label: Buy button link, type: string }
       - { name: price, label: Price, type: string }
       - { name: copyright, label: Copyright, type: text, description: "for the copyright field in the bottom" }
       - { name: body, label: Content, type: rich-text }
