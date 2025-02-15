@@ -9,6 +9,9 @@ import Header from "@/app/_components/header";
 import { ArrowRight } from "lucide-react";
 
 export default async function Index() {
+  // Add artificial delay of 2 seconds
+  await new Promise(resolve => setTimeout(resolve, 2000));
+  
   const page = getIndexPage();
 
   if (!page) {
@@ -23,7 +26,7 @@ export default async function Index() {
         <Header text="" />
         <article className="mb-32">
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tighter leading-tight mb-1">
+            <h1 className="text-3xl md:text-4xl tracking-tighter leading-tight mb-1">
               {page.title}
             </h1>
             <div className="font-semibold">
