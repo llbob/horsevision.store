@@ -26,17 +26,10 @@ content:
         fields:
           - { name: url, label: URL, type: image }
       - { name: body, label: Body, type: rich-text }
-  - name: contact
-    label: Contact
+  - name: pages
+    label: Pages
     type: file
     path: contact.md    # Changed from "_pages" to "contact.md"
-    fields:
-      - { name: title, label: Title, type: string, required: true }
-      - { name: body, label: Content, type: rich-text }
-  - name: info
-    label: Info
-    type: file
-    path: info.md    # Changed from "_pages" to "contact.md"
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: body, label: Content, type: rich-text }
