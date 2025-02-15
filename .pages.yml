@@ -47,10 +47,10 @@ content:
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: body, label: Content, type: rich-text }
-  - name: home
-    label: Home
+  - name: index
+    label: Index
     type: file
-    path: home.md   
+    path: index.md   
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: releaseCode, label: Release Code, type: string }
