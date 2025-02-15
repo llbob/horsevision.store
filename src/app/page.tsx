@@ -45,7 +45,7 @@ export default async function Index() {
         <Header text="" />
         <article className="mb-8">
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-2xl md:text-4xl tracking-tighter leading-tight mb-1">
+            <h1 className="text-2xl md:text-4xl tracking-tighter leading-tight mb-0">
               {page.title}
             </h1>
             <div className="text-base">
