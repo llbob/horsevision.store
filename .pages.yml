@@ -52,5 +52,5 @@ content:
     type: file
     path: home.md   
     fields:
-      - { name: title, label: Title, type: string, required: true }
+      - { name: title, label: Title, type: string, required: true, description: "this is a description" }
       - { name: body, label: Content, type: rich-text }
