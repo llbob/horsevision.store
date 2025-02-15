@@ -12,4 +12,3 @@ infoBlock3: All proceeds go directly to us in Horse Vision, which makes it
   funding - every purchase makes a huge difference.
 price: 20€ + VAT
 ---
-Some content for index page
