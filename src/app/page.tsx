@@ -1,30 +1,43 @@
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { getPage } from "../lib/api";
 import Container from "@/app/_components/container";
-import { HeroPost } from "@/app/_components/hero-post";
-import { Intro } from "@/app/_components/intro";
-import { MoreStories } from "@/app/_components/more-stories";
-import { getAllPosts } from "../lib/api";
+import Header from "@/app/_components/header";
+import { PostBody } from "@/app/_components/post-body";
+import markdownToHtml from "@/lib/markdownToHtml";
 
-export default function Index() {
-  const allPosts = getAllPosts();
+export default async function Index() {
+  const page = getPage("home");
 
-  const heroPost = allPosts[0];
+  if (!page) {
+    return notFound();
+  }
 
-  const morePosts = allPosts.slice(1);
+  const content = await markdownToHtml(page.content || "");
 
   return (
     <main>
       <Container>
-        <Intro />
-        <HeroPost
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          date={heroPost.date}
-          author={heroPost.author}
-          slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
-        />
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        <Header />
+        <article className="mb-32">
+          <h1 className="text-4xl font-bold mb-8">{page.title}</h1>
+          <PostBody content={content} />
+        </article>
       </Container>
     </main>
   );
+}
+
+export function generateMetadata(): Metadata {
+  const page = getPage("contact");
+
+  if (!page) {
+    return notFound();
+  }
+
+  const title = `${page.title} | Contact`;
+
+  return {
+    title,
+  };
 }
