@@ -14,12 +14,3 @@
   0%, 80% { opacity: 1; }
   100% { opacity: 0; visibility: hidden; }
 }
-
-@keyframes revealFromLeft {
-  0% { 
-    transform: translateX(0);
-  }
-  100% { 
-    transform: translateX(100%);
-  }
-}

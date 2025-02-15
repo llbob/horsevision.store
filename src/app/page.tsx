@@ -23,7 +23,7 @@ export default async function Index() {
         style={{ animation: 'fadeOut 2.5s forwards' }}>
         {page.pageLoadImage && (
           <div className="mb-8 flex justify-center relative">
-            <div className="relative">
+            <div className="relative overflow-hidden">
               <Image
                 src={page.pageLoadImage}
                 alt="Loading"
@@ -31,8 +31,7 @@ export default async function Index() {
                 height={300}
                 className="w-auto h-auto"
               />
-              <div className="absolute inset-0 bg-background blur-md opacity-50"
-                style={{ animation: 'revealFromLeft 2s forwards' }} />
+              <div className="absolute inset-0 bg-background animate-revealFromLeft opacity-70 blur-md" />
             </div>
           </div>
         )}
@@ -87,7 +86,7 @@ export default async function Index() {
 
               {page.buyButtonText && (
                 <div className="mt-8 flex">
-                  <span className="mr-2">﹂</span>
+                  <span className="mr-2 text-2xl">﹂</span>
                   <div className="block">
                     <a href={page.buyButtonLink} className="lemonsqueezy-button"><p className="text-2xl font-bold inline-flex items-center">{page.buyButtonText}<ArrowRight className="w-10 h-7 mt-1" /></p></a>
                     {page.price && (

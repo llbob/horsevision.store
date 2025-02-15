@@ -50,9 +50,14 @@ const config: Config = {
           '50%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+        revealFromLeft: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(100%)' },
+        }
       },
       animation: {
         'fadeIn': 'fadeIn 1s ease-in-out',
+        'revealFromLeft': 'revealFromLeft 2s forwards',
       },
     },
   },
