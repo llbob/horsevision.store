@@ -1,5 +1,6 @@
 ---
 title: Horse Vision – Another Life
+pageLoadImage: /assets/album/landingprogress.png
 releaseCode: "[INEX0012]"
 duration: 00:34:15
 coverImage: /assets/album/test-6.jpg
