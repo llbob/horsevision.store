@@ -1,5 +1,5 @@
 ---
-title: Horse Vision - Another Life
+title: Horse Vision – Another Life
 releaseCode: INEX012
 duration: 00:32:15
 coverImage: /assets/album/Screenshot 2025-02-15 at 11.10.18.png
