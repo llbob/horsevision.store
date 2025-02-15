@@ -45,13 +45,14 @@ const config: Config = {
         sans: ['Arial', 'sans-serif'],
       },
       keyframes: {
-        'loading-bar': {
-          '0%': { width: '0%' },
-          '100%': { width: '100%' }
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '50%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
       },
       animation: {
-        'loading-bar': 'loading-bar 2s ease-in-out infinite',
+        'fadeIn': 'fadeIn 1s ease-in-out',
       },
     },
   },

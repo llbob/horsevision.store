@@ -6,11 +6,20 @@
   html {
     font-family: Arial, sans-serif;
     @apply bg-background text-base-text;
+    overscroll-behavior: none;
   }
 }
 
-@keyframes loading {
-  0% { width: 0; }
-  50% { width: 100%; }
-  100% { width: 0; }
+@keyframes fadeOut {
+  0%, 80% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes revealFromLeft {
+  0% { 
+    transform: translateX(0);
+  }
+  100% { 
+    transform: translateX(100%);
+  }
 }

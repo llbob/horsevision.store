@@ -7,30 +7,45 @@ import { PostBody } from "@/app/_components/post-body";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Header from "@/app/_components/header";
 import { ArrowRight } from "lucide-react";
-import { Suspense } from "react";
-import Loading from "./loading";
 
-async function PageContent() {
-  // Get the data first
+export default async function Index() {
   const page = getIndexPage();
 
   if (!page) {
     return notFound();
   }
 
-  // Convert content after getting page data
   const content = await markdownToHtml(page.content || "");
 
   return (
     <main>
+      <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background transition-opacity duration-500 animate-fadeIn"
+        style={{ animation: 'fadeOut 1.5s forwards' }}>
+        {page.pageLoadImage && (
+          <div className="mb-8 flex justify-center relative">
+            <div className="relative">
+              <Image
+                src={page.pageLoadImage}
+                alt="Loading"
+                width={300}
+                height={300}
+                className="w-auto h-auto"
+              />
+              <div className="absolute inset-0 bg-background blur-md opacity-50"
+                style={{ animation: 'revealFromLeft 1s forwards' }} />
+            </div>
+          </div>
+        )}
+      </div>
+
       <Container>
         <Header text="" />
-        <article className="mb-32">
+        <article className="mb-8">
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-3xl md:text-4xl tracking-tighter leading-tight mb-1">
+            <h1 className="text-2xl md:text-4xl tracking-tighter leading-tight mb-1">
               {page.title}
             </h1>
-            <div className="font-semibold">
+            <div className="text-base">
               <p>{page.releaseCode}</p>
               <p>{page.duration}</p>
             </div>
@@ -97,17 +112,6 @@ async function PageContent() {
         </article>
       </Container>
     </main>
-  );
-}
-
-export default async function Index() {
-  // Force the loading state to show first
-  await new Promise(resolve => setTimeout(resolve, 2000));
-
-  return (
-    <Suspense fallback={<Loading />}>
-      <PageContent />
-    </Suspense>
   );
 }
 
