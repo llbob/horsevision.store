@@ -62,3 +62,4 @@ content:
       - { name: infoBlock3, label: "Info Block 3", type: text, description: "eg. explanation of how purchases directly support future releases etc.." }
       - { name: price, label: Price, type: string }
       - { name: copyright, label: Copyright, type: text, description: "for the copyright field in the bottom" }
+      - { name: body, label: Content, type: rich-text }
