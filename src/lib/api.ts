@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { join } from "path";
 
 const postsDirectory = join(process.cwd(), "_posts");
+const pagesDirectory = join(process.cwd(), "_pages");
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
@@ -25,4 +26,15 @@ export function getAllPosts(): Post[] {
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
+}
+
+export function getPage(path: string) {
+  const fullPath = join(pagesDirectory, `${path}.md`);
+  try {
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const { data, content } = matter(fileContents);
+    return { ...data, content };
+  } catch (error) {
+    return null;
+  }
 }
