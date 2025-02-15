@@ -55,8 +55,10 @@ content:
       - { name: title, label: Title, type: string, required: true }
       - { name: releaseCode, label: Release Code, type: string }
       - { name: duration, label: Duration, type: string }
+      - { name: coverImage, label: Cover image, type: image }
       - { name: infoBlock1, label: "Info Block 1", type: string, description: "eg. details about the number of tracks, singles, and bonus content included in the release" }
+      
       - { name: infoBlock2, label: "Info Block 2", type: string, description: "eg. information about the available formats and delivery method of the album" }
       - { name: infoBlock3, label: "Info Block 3", type: text, description: "eg. explanation of how purchases directly support future releases etc.." }
       - { name: price, label: Price, type: string }
-      - { name: body, label: Content, type: rich-text }
+      - { name: copyright, label: Copyright, type: text, description: "for the copyright field in the bottom" }
