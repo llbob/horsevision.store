@@ -9,16 +9,19 @@ import Header from "@/app/_components/header";
 import { ArrowRight } from "lucide-react";
 
 export default async function Index() {
-  // Add artificial delay of 2 seconds
-  await new Promise(resolve => setTimeout(resolve, 2000));
-  
+  // Get the data first
   const page = getIndexPage();
 
   if (!page) {
     return notFound();
   }
 
+  // Convert content after getting page data
   const content = await markdownToHtml(page.content || "");
+
+  // Add artificial delay AFTER getting the data
+  // This ensures the loading state is shown even if data fetching is fast
+  await new Promise(resolve => setTimeout(resolve, 2000));
 
   return (
     <main>
