@@ -20,10 +20,10 @@ export default async function Index() {
   return (
     <main>
       <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background transition-opacity duration-500 animate-fadeIn"
-        style={{ animation: 'fadeOut 2.5s forwards' }}>
+        style={{ animation: 'fadeOut 2s forwards' }}>
         {page.pageLoadImage && (
           <div className="mb-8 flex justify-center relative">
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden w-[300px]">
               <Image
                 src={page.pageLoadImage}
                 alt="Loading"
@@ -31,7 +31,11 @@ export default async function Index() {
                 height={300}
                 className="w-auto h-auto"
               />
-              <div className="absolute inset-0 bg-background animate-revealFromLeft opacity-70 blur-md" />
+              <div className="absolute inset-0 bg-background animate-revealFromLeft opacity-70 blur-md" 
+                   style={{ 
+                     width: '300%', 
+                     left: '-100%'
+                   }} />
             </div>
           </div>
         )}
