@@ -53,6 +53,7 @@ content:
     path: index.md   
     fields:
       - { name: title, label: Title, type: string, required: true }
+      - { name: pageLoadImage, label: Page load image, type: image, description: "this is the page-load image appearing before the page has completed loading, should be tiny png or svg."}
       - { name: releaseCode, label: Release Code, type: string }
       - { name: duration, label: Duration, type: string }
       - { name: coverImage, label: Cover image, type: image }
