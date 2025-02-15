@@ -68,6 +68,7 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
       <body className={inter.className}>
+        <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
         <div className="min-h-screen">{children}</div>
         <Footer />
       </body>
