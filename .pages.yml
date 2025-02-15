@@ -29,7 +29,7 @@ content:
   - name: pages
     label: Pages
     type: file
-    path: _pages    # Changed from "_pages/contact" to "_pages"
+    path: contact.md    # Changed from "_pages" to "contact.md"
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: body, label: Content, type: rich-text }
