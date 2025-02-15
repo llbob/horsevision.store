@@ -2,9 +2,11 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getIndexPage } from "../lib/api";
 import Container from "@/app/_components/container";
-import Header from "@/app/_components/header";
+import Image from "next/image";
 import { PostBody } from "@/app/_components/post-body";
 import markdownToHtml from "@/lib/markdownToHtml";
+import Header from "@/app/_components/header";
+import { ArrowRight } from "lucide-react";
 
 export default async function Index() {
   const page = getIndexPage();
@@ -18,67 +20,73 @@ export default async function Index() {
   return (
     <main>
       <Container>
-        <Header />
+        <Header text="" />
         <article className="mb-32">
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-6xl md:text-7xl font-bold tracking-tighter leading-tight mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tighter leading-tight mb-1">
               {page.title}
             </h1>
-            
+            <div className="font-semibold">
+              <p>{page.releaseCode}</p>
+              <p>{page.duration}</p>
+            </div>
+
             {page.coverImage && (
               <div className="mb-8 md:mb-16 sm:mx-0">
-                <img
+                <Image
                   src={page.coverImage}
                   alt={page.title}
+                  width={1000}
+                  height={1000}
                   className="w-full h-auto"
                 />
               </div>
             )}
 
             <div className="mb-8 text-lg">
-              <div className="font-semibold text-gray-600">
-                <p>{page.releaseCode}</p>
-                <p>{page.duration}</p>
-              </div>
-              
+
+
               <div className="mt-6 space-y-6">
                 {page.infoBlock1 && (
                   <div className="prose">
-                    <p>{page.infoBlock1}</p>
+                    <p><span className="mr-2">﹂</span>{page.infoBlock1}</p>
                   </div>
                 )}
-                
+
                 {page.infoBlock2 && (
                   <div className="prose">
-                    <p>{page.infoBlock2}</p>
+                    <p><span className="mr-2">﹂</span>{page.infoBlock2}</p>
                   </div>
                 )}
-                
+
                 {page.infoBlock3 && (
                   <div className="prose">
-                    <p>{page.infoBlock3}</p>
+                    <p><span className="mr-2">﹂</span>{page.infoBlock3}</p>
                   </div>
                 )}
               </div>
 
-              {page.price && (
-                <div className="mt-8">
-                  <p className="text-2xl font-bold">{page.price}</p>
+              {page.buyButtonText && (
+                <div className="mt-8 flex">
+                  <span className="mr-2">﹂</span>
+                  <div className="block">
+                    <a href={page.buyButtonLink} className="lemonsqueezy-button"><p className="text-2xl font-bold inline-flex items-center">{page.buyButtonText}<ArrowRight className="w-10 h-7 mt-1" /></p></a>
+                    {page.price && (
+                      <p className="text-base-text">{page.price}</p>
+                    )}
+                  </div>
                 </div>
               )}
 
-              {page.buyButtonText && (
-                <div className="mt-8">
-                  <a href={page.buyButtonLink} className="lemonsqueezy-button">{page.buyButtonText}</a>
-                </div>
-              )}
+
             </div>
 
             <PostBody content={content} />
 
-            {page.copyright && (
-              <footer className="mt-12 text-sm text-gray-500">
-                <p>{page.copyright}</p>
+            {page.copyrightBody && (
+              <footer className="mt-12 text-xs text-center">
+                <p className="text-subtle">{page.copyrightBody}</p>
+                <p className="text-subtle mt-2">{page.copyrightEndText}</p>
               </footer>
             )}
           </div>

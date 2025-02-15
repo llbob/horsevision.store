@@ -1,11 +1,8 @@
 import Footer from "@/app/_components/footer";
 import { CMS_NAME } from "@/lib/constants";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 function getNormalizedUrl() {
   const url = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
@@ -67,7 +64,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body className={inter.className}>
+      <body>
         <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
         <div className="min-h-screen">{children}</div>
         <Footer />

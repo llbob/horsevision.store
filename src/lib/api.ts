@@ -57,13 +57,15 @@ export function getIndexPage(): IndexPage | null {
     return {
       slug: "index", // If making more of these, make sure to update the slug to the actual slug of the page
       title: data.title,
+      pageLoadImage: data.pageLoadImage,
       releaseCode: data.releaseCode,
       duration: data.duration,
       infoBlock1: data.infoBlock1,
       infoBlock2: data.infoBlock2,
       infoBlock3: data.infoBlock3,
       price: data.price,
-      copyright: data.copyright,
+      copyrightBody: data.copyrightBody,
+      copyrightEndText: data.copyrightEndText,
       coverImage: data.coverImage,
       buyButtonText: data.buyButtonText,
       buyButtonLink: data.buyButtonLink,

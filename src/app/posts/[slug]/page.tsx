@@ -20,7 +20,7 @@ export default async function Post({ params }: Params) {
   return (
     <main>
       <Container>
-        <Header />
+        <Header text={post.title} />
         <article className="mb-32">
           <PostHeader
             title={post.title}
@@ -48,7 +48,7 @@ export function generateMetadata({ params }: Params): Metadata {
     return notFound();
   }
 
-  const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
+  const title = `${post.title} | Posts ${CMS_NAME}`;
 
   return {
     openGraph: {
