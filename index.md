@@ -2,7 +2,7 @@
 title: Horse Vision – Another Life
 pageLoadImage: /assets/album/landingprogress.png
 releaseCode: "[INEX0012]"
-duration: 00:34:15
+duration: 00:35:11
 coverImage: /assets/album/test-6.jpg
 infoBlock1: Contains 13 tracks – including all singles released throughout
   2024/2025 + an additional bonus track, stems to all songs and extra digital
