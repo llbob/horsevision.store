@@ -12,7 +12,7 @@ infoBlock3: All proceeds go directly to us in Horse Vision, which makes it
   possible for us to go on tour and make more music. We have no additional
   funding – every purchase makes a huge difference.
 buyButtonText: Buy digital album
-buyButtonLink: https://horsevision.lemonsqueezy.com/buy/6dfc4aa0-cbe0-4598-8b51-66b7092cd7af
+buyButtonLink: https://horsevision.lemonsqueezy.com/buy/6dfc4aa0-cbe0-4598-8b51-66b7092cd7af?media=0&logo=0
 price: 16£ + VAT
 copyrightBody: >+
   All works that appear in downloaded folder do so with the consent of the
