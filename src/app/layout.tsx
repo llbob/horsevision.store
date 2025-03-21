@@ -52,9 +52,10 @@ export default function RootLayout({
         <link rel="manifest" href="/favicon/site.webmanifest" />
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
         <meta name="theme-color" content="#000" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
-      <body>
+      <body className="bg-background">
         <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
         <div className="min-h-screen">{children}</div>
         <Footer />

@@ -3,14 +3,29 @@
 @tailwind utilities;
 
 @layer base {
-  html {
+  html,
+  body {
     font-family: Arial, sans-serif;
     @apply bg-background text-base-text;
     overscroll-behavior: none;
+    min-height: 100%;
+  }
+
+  body {
+    position: relative;
+    background-color: #f8f8f8;
+    /* Prevent overscroll effects on touch screens */
+    -webkit-overflow-scrolling: touch;
   }
 }
 
 @keyframes fadeOut {
-  0%, 80% { opacity: 1; }
-  100% { opacity: 0; visibility: hidden; }
+  0%,
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
